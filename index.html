@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find out about the final puzzle!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #message {
+            color: red;
+            margin-top: 20px;
+        }
+        #finalMessage {
+            color: green;
+            font-size: 1.2em;
+            margin-top: 20px;
+            display: none; /* 默认隐藏 */
+        }
+    </style>
+</head>
+<body>
+    <h1>Please enter the four-digit code:</h1>
+    <input type="text" id="password" maxlength="4" placeholder="Here's where you enter">
+    <button onclick="checkPassword()">Submit</button>
+    <p id="message"></p>
+    <p id="finalMessage">Congratulations!<br>Final hint: The folder you're looking for is in our Malaysia trip shared album and the hint for code... check my ig story!</p>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const message = document.getElementById("message");
+            const finalMessage = document.getElementById("finalMessage");
+
+            if (password === "1518") { // 替换为你的四位数字密码
+                finalMessage.style.display = "block"; // 显示最终提示
+                message.innerText = ""; // 清空错误提示
+            } else {
+                message.innerText = "Sorry! Try again!";
+                finalMessage.style.display = "none"; // 隐藏最终提示
+            }
+        }
+    </script>
+</body>
+</html>
